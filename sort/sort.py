@@ -1,13 +1,24 @@
 #给定一个无序的数组，将其进行排序
 
-
-list=[2,3,7,1,0,56,-9,-5,-9,-1,4,3]
-
-#升序
-list.sort()
+import random
+list=list(range(10))
+random.shuffle(list)
 print(list)
 
-#降序
-list.sort(reverse=True)
+#冒泡
+for i in range(len(list)-1):
+    for j in range(len(list)-1):
+        if list[j]>list[j+1]:
+            list[j],list[j+1]=list[j+1],list[j]
 print(list)
 
+#插入
+
+for i in range(1, len(list)):
+    value = list[i]
+    for j in range(i):
+        if list[j] > value:
+            list[i] = list[j]
+            list[j] = value
+
+print(list)
